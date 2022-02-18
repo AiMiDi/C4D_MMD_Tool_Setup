@@ -69,7 +69,6 @@ Name: "ukrainian"; MessagesFile: "compiler:Languages\Ukrainian.isl";
 
 [CustomMessages]
 LicenseAccept=I agree 
-chinesesimplified.LicenseAccept=Œ“‘∏“‚
 
 [Components]
 Name: R20; Description:"Maxon Cinema 4D R20";

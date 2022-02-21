@@ -11,6 +11,7 @@
 #define MyAppAssocName MyAppName + " File"
 #define MyAppAssocExt ".exe"
 #define MyAppAssocKey StringChange(MyAppAssocName, " ", "") + MyAppAssocExt
+#define CreateReadMe 0
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
@@ -26,8 +27,6 @@ AppUpdatesURL={#MyAppURL}
 DisableDirPage=yes
 DefaultDirName={autopf}\{#MyAppName}
 ChangesAssociations=yes
-; Uncomment the following line to run in non administrative install mode (install for current user only.)
-;PrivilegesRequired=lowest
 OutputBaseFilename={#MyAppName_}_v{#MyAppVersion}_setup
 Compression=lzma2/ultra64
 SolidCompression=yes
@@ -77,6 +76,9 @@ Name: S22; Description:"Maxon Cinema 4D S22";
 Name: R23; Description:"Maxon Cinema 4D R23";
 Name: S24; Description:"Maxon Cinema 4D S24";
 Name: R25; Description:"Maxon Cinema 4D R25";
+#if CreateReadMe 1
+ Name: readme; Description:"readme"; Types: full compact custom;
+#endif   
 
 [Files]
 ;Source: ISTask.dll; DestDir: {app}; Flags: ignoreversion solidbreak uninsrestartdelete
@@ -94,9 +96,9 @@ Source: "plugin\common\*"; DestDir: "{code:R23Dir|plugins\{#MyDirName}}"; Compon
 Source: "plugin\common\*"; DestDir: "{code:S24Dir|plugins\{#MyDirName}}"; Components:S24; Flags: ignoreversion createallsubdirs recursesubdirs; 
 Source: "plugin\common\*"; DestDir: "{code:R25Dir|plugins\{#MyDirName}}"; Components:R25; Flags: ignoreversion createallsubdirs recursesubdirs; 
 
-;Source: "..\README.pdf"; DestDir: "{autopf}\{#MyAppName}"; Flags: ignoreversion createallsubdirs recursesubdirs isreadme; 
-;Source: "..\README_zh.pdf"; DestDir: "{autopf}\{#MyAppName}"; Flags: ignoreversion createallsubdirs recursesubdirs isreadme; 
-; NOTE: Don't use "Flags: ignoreversion" on any shared system files
+#if CreateReadMe 1
+Source: "README.pdf"; DestDir: "{app}"; Flags: ignoreversion isreadme; Components:readme;
+#endif  
 
 [InstallDelete]
 Type: filesandordirs; Name: "{code:R20Dir|plugins/{#MyDirName}}"; Components:R20;

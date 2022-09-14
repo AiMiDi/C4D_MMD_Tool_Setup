@@ -30,7 +30,7 @@
 #define OUT_FILE_NAME PluginNameUnderlined + "_for_Cinema_4D_" + PluginVersion + "_setup"
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-#define APP_GUID "3C5D5139-72A8-46C7-AC79-B5528066BC6D"
+#define APP_GUID "{3C5D5139-72A8-46C7-AC79-B5528066BC6D}"
 
 #include "common_setup.iss"
 
@@ -51,8 +51,8 @@
 Name: C_{#C4DVersion}; Description:"{#PluginName} for {#DCC_NAME} {#C4DVersion}";Flags: disablenouninstallwarning;
 [Files]
 ; All versions deal with files in the same way.
-Source: "..\..\code\release\{#C4DVersion}\{#PluginDLLName}.xdl64"; DestDir: "{code:InstallDir|{#C4DVersion}}plugins\{#PluginNameUnderlined}"; Components:C_{#C4DVersion}; Flags: ignoreversion; 
-Source: "..\..\code\res\*"; DestDir: "{code:InstallDir|{#C4DVersion}}plugins\{#PluginNameUnderlined}\res"; Components:C_{#C4DVersion}; Flags: ignoreversion recursesubdirs; 
+Source: "..\..\release\{#C4DVersion}\{#PluginDLLName}.xdl64"; DestDir: "{code:InstallDir|{#C4DVersion}}plugins\{#PluginNameUnderlined}"; Components:C_{#C4DVersion}; Flags: ignoreversion; 
+Source: "..\..\res\*"; DestDir: "{code:InstallDir|{#C4DVersion}}plugins\{#PluginNameUnderlined}\res"; Components:C_{#C4DVersion}; Flags: ignoreversion recursesubdirs; 
 [InstallDelete]
 Type: filesandordirs; Name: "{code:InstallDir|{#C4DVersion}}plugins\{#PluginNameUnderlined}"; Components:C_{#C4DVersion};
 #endsub

@@ -1,4 +1,4 @@
-# C4D_Plugin_Setup
+# C4D_MMD_Tool_Setup
 
 A generic Inno Setup Script for packaging the C4D plugin as an installation package.
 

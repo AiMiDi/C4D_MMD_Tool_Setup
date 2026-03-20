@@ -1,4 +1,4 @@
-﻿; common info
+; common info
 
 [Setup]
 AppId={{#APP_GUID}}
@@ -39,8 +39,8 @@ Name: "armenian"; MessagesFile: "compiler:Languages\Armenian.isl"; LicenseFile: 
 Name: "brazilianportuguese"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"; LicenseFile: "License_en.txt";
 Name: "bulgarian"; MessagesFile: "compiler:Languages\Bulgarian.isl"; LicenseFile: "License_en.txt";
 Name: "catalan"; MessagesFile: "compiler:Languages\Catalan.isl"; LicenseFile: "License_en.txt";
-Name: "chinesesimplified"; MessagesFile: "compiler:Languages\ChineseSimplified.isl"; LicenseFile: "License_ch.txt";
-Name: "chinesetraditional"; MessagesFile: "compiler:Languages\ChineseTraditional.isl"; LicenseFile: "License_ch.txt";
+Name: "chinesesimplified"; MessagesFile: "..\Languages\ChineseSimplified.isl"; LicenseFile: "License_ch.txt";
+Name: "chinesetraditional"; MessagesFile: "..\Languages\ChineseTraditional.isl"; LicenseFile: "License_ch.txt";
 Name: "corsican"; MessagesFile: "compiler:Languages\Corsican.isl"; LicenseFile: "License_en.txt";
 Name: "czech"; MessagesFile: "compiler:Languages\Czech.isl"; LicenseFile: "License_en.txt";
 Name: "danish"; MessagesFile: "compiler:Languages\Danish.isl"; LicenseFile: "License_en.txt";
@@ -49,7 +49,6 @@ Name: "finnish"; MessagesFile: "compiler:Languages\Finnish.isl"; LicenseFile: "L
 Name: "french"; MessagesFile: "compiler:Languages\French.isl"; LicenseFile: "License_en.txt";
 Name: "german"; MessagesFile: "compiler:Languages\German.isl"; LicenseFile: "License_en.txt";
 Name: "hebrew"; MessagesFile: "compiler:Languages\Hebrew.isl"; LicenseFile: "License_en.txt";
-Name: "icelandic"; MessagesFile: "compiler:Languages\Icelandic.isl"; LicenseFile: "License_en.txt";
 Name: "italian"; MessagesFile: "compiler:Languages\Italian.isl"; LicenseFile: "License_en.txt";
 Name: "japanese"; MessagesFile: "compiler:Languages\Japanese.isl"; LicenseFile: "License_en.txt";
 Name: "norwegian"; MessagesFile: "compiler:Languages\Norwegian.isl"; LicenseFile: "License_en.txt";

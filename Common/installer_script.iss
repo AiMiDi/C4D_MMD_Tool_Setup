@@ -7,7 +7,7 @@
 ;   * xdl64：从各「R 系 / 年份」SDK 工程 Release 输出目录读取（见下方 XdlSdkRel）。
 ;     旧版 Cinema 4D 中 R/S 为同一大版本；S 系与配对 R 系 ABI 兼容（如 R25 SDK 覆盖至 S26.x），
 ;     故 S22/S24/S26 不再单独使用 sdk_s* 编译，安装包中复用同代 R 系（sdk_r21 / sdk_r23 / sdk_r25）产物。
-;   * res：R20～S24 使用 res\R20-S24；R25 及以后使用 res\S24_up。
+;   * res：使用同一 SDK 构建产物中的完整资源树（包含验证后的 cmt_config.json）。
 ; 构建目录/配置可通过 ISCC 覆盖，例如：
 ;   /DSdkBuildDir=_build_msvc /DSdkBinConfig=Release
 
@@ -72,7 +72,7 @@ Name: C_{#C4DVersion}; Description:"{#PluginName} for {#DCC_NAME} {#C4DVersion}"
 [Files]
 ; xdl：CMake 输出一般为 mmdtool.xdl64，安装目标文件名由 PluginDLLName 决定时需与之一致（此处复制为插件目录下主模块名）
 Source: "..\..\{#SdkBuildDir}\{#SdkRootName}\bin\{#SdkBinConfig}\plugins\mmdtool\mmdtool.xdl64"; DestName: "{#PluginDLLName}.xdl64"; DestDir: "{code:InstallDir|{#C4DVersion}}plugins\{#PluginNameUnderlined}"; Components:C_{#C4DVersion}; Flags: ignoreversion; 
-Source: "..\..\res\{#ResFolderName}\*"; DestDir: "{code:InstallDir|{#C4DVersion}}plugins\{#PluginNameUnderlined}\res"; Components:C_{#C4DVersion}; Flags: ignoreversion recursesubdirs; 
+Source: "..\..\{#SdkBuildDir}\{#SdkRootName}\bin\{#SdkBinConfig}\plugins\mmdtool\res\*"; DestDir: "{code:InstallDir|{#C4DVersion}}plugins\{#PluginNameUnderlined}\res"; Components:C_{#C4DVersion}; Flags: ignoreversion recursesubdirs;
 [InstallDelete]
 Type: filesandordirs; Name: "{code:InstallDir|{#C4DVersion}}plugins\{#PluginNameUnderlined}"; Components:C_{#C4DVersion};
 #endsub

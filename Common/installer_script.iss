@@ -73,6 +73,7 @@ Name: C_{#C4DVersion}; Description:"{#PluginName} for {#DCC_NAME} {#C4DVersion}"
 ; xdl：CMake 输出一般为 mmdtool.xdl64，安装目标文件名由 PluginDLLName 决定时需与之一致（此处复制为插件目录下主模块名）
 Source: "..\..\{#SdkBuildDir}\{#SdkRootName}\bin\{#SdkBinConfig}\plugins\mmdtool\mmdtool.xdl64"; DestName: "{#PluginDLLName}.xdl64"; DestDir: "{code:InstallDir|{#C4DVersion}}plugins\{#PluginNameUnderlined}"; Components:C_{#C4DVersion}; Flags: ignoreversion; 
 Source: "..\..\{#SdkBuildDir}\{#SdkRootName}\bin\{#SdkBinConfig}\plugins\mmdtool\res\*"; DestDir: "{code:InstallDir|{#C4DVersion}}plugins\{#PluginNameUnderlined}\res"; Components:C_{#C4DVersion}; Flags: ignoreversion recursesubdirs;
+Source: "..\..\{#SdkBuildDir}\{#SdkRootName}\bin\{#SdkBinConfig}\plugins\mmdtool\mcp\*"; DestDir: "{code:InstallDir|{#C4DVersion}}plugins\{#PluginNameUnderlined}\mcp"; Components:C_{#C4DVersion}; Flags: ignoreversion recursesubdirs;
 [InstallDelete]
 Type: filesandordirs; Name: "{code:InstallDir|{#C4DVersion}}plugins\{#PluginNameUnderlined}"; Components:C_{#C4DVersion};
 #endsub
